@@ -27,65 +27,47 @@ public class Reservation implements Serializable {
     private String status = "created";
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "roomid")
     @JsonIgnoreProperties("reservations")
     private Room room;
 
     @ManyToOne
-    @JoinColumn(name = "idClient")
+    @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
 
     private String score;
-
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
-
     public Integer getIdReservation() {
         return idReservation;
     }
-
     public void setIdReservation(Integer idReservation) {
         this.idReservation = idReservation;
     }
-
     public Date getStartDate() {
         return startDate;
     }
-
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-
     public Date getDevolutionDate() {
         return devolutionDate;
     }
-
+    
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
-
-    public String getStatus() {
+     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public Room getRoom() {
+     public Room getRoom() {
         return room;
     }
-
     public void setRoom(Room room) {
         this.room = room;
     }
-
     public Client getClient() {
         return client;
     }
@@ -93,5 +75,28 @@ public class Reservation implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
+    public String getScore() {
+        return score;
+    }
+    public void setScore(String score) {
+        this.score = score;
+    }
 
 }
+
+    
+    
+
+    
+
+   
+
+   
+
+    
+
+   
+
+    
+
+    

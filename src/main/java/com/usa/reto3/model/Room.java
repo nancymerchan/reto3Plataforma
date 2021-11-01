@@ -27,7 +27,7 @@ public class Room implements Serializable {
     /**
      * Id clave primaria
      */
-    private Integer idRoom;
+    private Integer id;
     /**
      * Captura de la habitación
      */
@@ -61,18 +61,18 @@ public class Room implements Serializable {
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "room")
-    @JsonIgnoreProperties({"room", "client"})
+    @JsonIgnoreProperties({"room", "messages"})
     /**
      * Reservas
      */
     private List<Reservation> reservations;
 
     public Integer getId() {
-        return idRoom;
+        return id;
     }
 
     public void setId(Integer id) {
-        this.idRoom = id;
+        this.id = id;
     }
 
     public String getName() {
